@@ -8,18 +8,16 @@ import "./assets/img/4geeks.ico";
 let pronoun = ["the", "our"];
 let adj = ["great", "big"];
 let noun = ["jogger", "racoon"];
-let outcomes = [];
+let outcomes = "";
 window.onload = function() {
   pronoun.forEach(pro => {
     adj.forEach(a => {
       noun.forEach(n => {
-        let domain = `${pro}${a}${n}.com`;
-        outcomes.push(domain);
+        let domain = `<li>${pro}${a}${n}.com</li>`;
+        outcomes += domain;
       });
     });
   });
+  document.getElementById("domain").innerHTML = outcomes;
   console.log(outcomes, "outcomes");
-  outcomes.forEach(outcome => {
-    document.querySelectorAll("#domain").innerHTML = `<li>${outcome}</li>`;
-  });
 };
